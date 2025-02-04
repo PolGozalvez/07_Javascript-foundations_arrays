@@ -59,3 +59,16 @@ const USERS = [
  * @param {Array<Object>} users - The array of user objects to extend.
  * @returns {Array<Object>} An array of user objects with extended settings.
  */
+export default function extendUsersSettings(users) {
+    if (!users) {
+        return [];
+    }
+
+    const extendUsersSettingsInArray = users.map((user, index) => {
+        const extendedUser = { ...user, id: index, isEnabled: true };
+
+        return extendedUser;
+    });
+
+    return extendUsersSettingsInArray;
+}

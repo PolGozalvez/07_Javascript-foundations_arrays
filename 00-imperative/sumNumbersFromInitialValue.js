@@ -11,3 +11,15 @@
  * @param {number} initialAccumulatedValue - The initial value to start the sum from.
  * @returns {number} The sum of the numbers in the array starting from the initial value.
  */
+export default function sumNumbersFromInitialValue(numbersList, initialAccumulatedValue) {
+    const numbersListLenght = numbersList.length;
+    
+    let correctSum = initialAccumulatedValue;
+    
+    for (let number = 0; number < numbersListLenght; number++) {
+        const currentValue = numbersList[number];
+        correctSum += currentValue;
+    }
+
+    return correctSum;
+}
