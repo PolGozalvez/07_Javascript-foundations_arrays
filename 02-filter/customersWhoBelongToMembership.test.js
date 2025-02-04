@@ -23,6 +23,7 @@ describe("customersWhoBelongToMembership", () => {
         //Assert
         expect(onlyCustomersMembers).toEqual(expected);
     });
+    
     it("should handle an empty array", () => {
         //Arrange
         const EMPTY_CUSTOMERS_LIST = [];
