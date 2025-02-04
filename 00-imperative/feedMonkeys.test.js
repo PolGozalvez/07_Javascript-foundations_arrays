@@ -1,17 +1,65 @@
+import { describe, it, expect } from "vitest";
+import feedMonkeys from "./feedMonkeys.js";
+
 const MONKEYS_LIST = ["🐒", "🦍", "🦧"];
-const apple = "🍎";
-const banana = "🍌";
-const grape = "🍇";
-const specialCharacters = "🍉🍇";
 
 describe("feedMonkeys", () => {
-  it.todo("should feed monkeys with bananas");
+    it("should feed monkeys with bananas", () => {
+        //Arrange
+        const expected = ["🐒 🍌", "🦍 🍌", "🦧 🍌"];
+        const banana = "🍌";
 
-  it.todo("should feed monkeys with apples");
+        //Act
+        const monkeyListWithBananas = feedMonkeys(MONKEYS_LIST, banana);
 
-  it.todo("should feed monkeys with grapes");
+        //Assert
+        expect(monkeyListWithBananas).toEqual(expected);
+    });
 
-  it.todo("should return an empty array if no fruit is provided");
+    it("should feed monkeys with apples", () => {
+        //Arrange
+        const expected = ["🐒 🍎", "🦍 🍎", "🦧 🍎"];
+        const apple = "🍎";
 
-  it.todo("should handle feeding monkeys with special characters");
+        //Act
+        const monkeyListWithApples = feedMonkeys(MONKEYS_LIST, apple);
+
+        //Assert
+        expect(monkeyListWithApples).toEqual(expected);
+    });
+
+    it("should feed monkeys with grapes", () => {
+        //Arrange
+        const expected = ["🐒 🍇", "🦍 🍇", "🦧 🍇"];
+        const grape = "🍇";
+
+        //Act
+        const monkeyListWithGrapes = feedMonkeys(MONKEYS_LIST, grape);
+
+        //Assert
+        expect(monkeyListWithGrapes).toEqual(expected);
+    });
+
+    it("should return an empty array if no fruit is provided", () => {
+        //Arrange
+        const expected = [];
+
+        //Act
+        const monkeyListEmpty = feedMonkeys(MONKEYS_LIST);
+
+        //Assert
+        expect(monkeyListEmpty).toEqual(expected);
+    });
+
+    it("should handle feeding monkeys with special characters", () => {
+        //Arrange
+        const expected = ["🐒 🍉🍇", "🦍 🍉🍇", "🦧 🍉🍇"];
+        const specialCharacters = "🍉🍇";
+
+        //Act
+        const monkeyListWithSpecialCharacters = feedMonkeys(MONKEYS_LIST, specialCharacters);
+
+        //Assert
+        expect(monkeyListWithSpecialCharacters).toEqual(expected);
+    });
 });

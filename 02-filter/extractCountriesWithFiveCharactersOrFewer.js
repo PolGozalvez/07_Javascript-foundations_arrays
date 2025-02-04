@@ -12,3 +12,11 @@
  * @param {string[]} countriesList - An array of country names.
  * @returns {string[]} An array of country names that have five characters or fewer.
  */
+export default function extractCountriesWithFiveCharactersOrFewer(countriesList) {
+    const countriesWithFiveCharactersOrFewer = countriesList.filter((countrie) => {
+        
+        return countrie.length <= 5;
+    });
+
+    return countriesWithFiveCharactersOrFewer;
+}
